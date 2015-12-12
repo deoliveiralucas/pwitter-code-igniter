@@ -240,3 +240,25 @@ a:hover {
 	font-size: 1.2em;
 	padding: 0.5em;
 }
+
+input[type=text], input[type=password], input[type=submit], textarea {
+	background-color: #FFFFFF;
+	border: 2px solid #0066a0;
+	color: #232323;
+	font-size: 1.2em;
+	height: 40px;
+	margin: 0.2em 0;
+	padding: 0.5em;
+	position: relative;
+	font-family: 'Roboto-Regular';
+}
+
+input[type=submit]:hover {
+	cursor: pointer;
+	background-color: #0066a0; 
+	color: #FFF;
+}
+
+textarea {
+	height: 100px;
+}

@@ -30,11 +30,11 @@ class Profile extends CI_Controller
         }
         $username = $_SESSION['username'];
 
-
         $data['user'] = $this->user->findByUsername($username);
         $data['followers'] = $this->follows->findFollowersByUserId($data['user']->id);
         $data['following'] = $this->follows->findFollowingByUserId($data['user']->id);
         $data['timeline'] = $this->pweet->findContentByUsers($data['following']);
+        $data['pweets'] = $this->pweet->findPweets($data['user']->id);
 
         $this->load->view('template/_header');
         $this->load->view('profile/index', $data);

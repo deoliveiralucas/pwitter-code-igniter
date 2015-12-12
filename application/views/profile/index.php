@@ -3,7 +3,7 @@
         <a href="/profile/view"><div class="foto"></div></a>
         <h4 class="mar-0_5em-bottom"><?php echo ucfirst($user->username); ?></h4>
         <a href="mailto:<?php echo $user->email; ?>"><?php echo $user->email; ?></a>
-        <p><a href="#">Pweets: 65</a></p>
+        <p><a href="#">Pweets: <?php echo count($pweets) ?></a></p>
         <p><a href="#">Seguindo: <?php echo count($followers) ?></a> | <a href="#">Seguidores: <?php echo count($following); ?></a></p>
     </div>
     <div class="twittar">

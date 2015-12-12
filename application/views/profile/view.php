@@ -22,8 +22,10 @@
                     <p>
                         <?php echo $content['content'] ?><br>
                         <i style="color: #666;">
-                            <?php echo date('d/m/Y H:i:s', strtotime($content['insert_date'])); ?> -
-                            <?php echo $content['username']; ?>
+                            <?php echo $content['username']; ?> -
+                            <i style="font-size: 10px;">
+                                <?php echo date('d/m/Y H:i:s', strtotime($content['insert_date'])); ?>
+                            </i>
                         </i>
                     </p>
                 </div>

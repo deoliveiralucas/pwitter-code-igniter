@@ -4,18 +4,23 @@
 	margin: 0 auto;
 	max-width: 1200px;
 	padding: 0.5em 0 0 0;
-	width: 1200px;
-        height: 300px; 
+	width: 1200px;s
 }
 
 .lateral {
-    float: left; 
+    float: left;
     width: 30%;
     text-align: center;
 }
 
+.lateral-view {
+	width: 100%;
+	text-align: center;
+}
+
 .foto {
     background: url("/static/img/img.jpg") no-repeat;
+	background-size: 160px;
     width: 100px;
     height: 100px;
     margin: 0 auto;
@@ -48,7 +53,7 @@
     float: left;
     background: url("/static/img/img.jpg") no-repeat;
     width: 100px;
-    height: 100px;  
+    height: 100px;
     margin-left: 1em;
     border-radius: 50%;
 }
@@ -59,7 +64,7 @@
     padding-left: 2em;
 }
 
-/* TOPO */ 
+/* TOPO */
 .topo {
     background: #0066a0;
     height: 50px;
@@ -79,24 +84,26 @@
 	.container {
 		max-width: 700px;
 		width: 700px;
-                height: 500px;
 	}
-        
-        .lateral {
-            width: 100%;
-        }
-        
-        .twittar {
-            float: left;
-            width: 100%;
-        }
-        
-        .posts {
-            width: 100%;
-            margin: 0 auto;
-            height: 200px;
-        }
-       
+
+    .lateral {
+        width: 100%;
+    }
+
+	.lateral-view {
+		width: 100%;
+	}
+
+    .twittar {
+        float: left;
+        width: 100%;
+    }
+
+    .posts {
+        width: 100%;
+        margin: 0 auto;
+        height: 200px;
+    }
 }
 
 /* MEDIA MAX 767px */
@@ -105,7 +112,4 @@
 		max-width: 300px;
 		width: 300px;
 	}
-        
-        
-
 }

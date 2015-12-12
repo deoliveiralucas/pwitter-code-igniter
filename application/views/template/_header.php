@@ -31,8 +31,8 @@
             <a href="/" class="font-black font-size-2em p-off">Pweeter</a>
 
             <?php if (! isset($removeTopo)) { ?>
-                <a href="../../authentication/logout" class="right mar-1em-top sair"> Sair</a>
-                <a class="right mar-1em-top" style="padding-right: 1em;">Meus Dados </a>
+                <a href="/authentication/logout" class="right mar-1em-top sair"> Sair</a>
+                <a href="/profile/update" class="right mar-1em-top" style="padding-right: 1em;">Meus Dados </a>
             <?php } else { ?>
                 <p class="right" style="margin-top: 0.5em;"><?= anchor('profile/create','Criar Usuário'); ?></p>
             <?php } ?>

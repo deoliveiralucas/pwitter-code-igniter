@@ -40,7 +40,7 @@ INSERT INTO pweet VALUES
 
 INSERT INTO follows VALUES
     (NULL, 1,2),
-    (NULL, 1,2),
+    (NULL, 1,3),
     (NULL, 2,1),
     (NULL, 2,4),
     (NULL, 2,3),

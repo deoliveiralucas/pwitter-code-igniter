@@ -2,7 +2,7 @@
 
 <div class="form-inline txt-center">
 
-	<?php $username = 'placeholder="Login"'; ?>
+	<?php $username = 'placeholder="Username"'; ?>
 	<?= form_input('username', '', $username); ?>
 	<br>
 	<?php $senha = 'placeholder="Senha"'; ?>

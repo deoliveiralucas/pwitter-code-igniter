@@ -1,6 +1,6 @@
 <div class="container">
     <div class="lateral">
-        <div class="foto"></div>
+        <a href="/profile/view"><div class="foto"></div></a>
         <h4 class="mar-0_5em-bottom"><?php echo ucfirst($user->username); ?></h4>
         <a href="mailto:<?php echo $user->email; ?>"><?php echo $user->email; ?></a>
         <p><a href="#">Pweets: 65</a></p>

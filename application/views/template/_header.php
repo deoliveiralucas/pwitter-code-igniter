@@ -25,11 +25,16 @@
 </head>
 
 <body rel="home">
+
     <div class="topo">
         <div class="container">
-            <a class="font-black font-size-2em p-off">Pweeter</a>
-            <a class="right mar-1em-top"> Sair</a>
-            <a class="right mar-1em-top" style="padding-right: 1em;">Meus Dados </a>
+            <a href="" class="font-black font-size-2em p-off">Pweeter</a>
+            <?php if (!$removeTopo) { ?>
+                <a class="right mar-1em-top"> Sair</a>
+                <a class="right mar-1em-top" style="padding-right: 1em;">Meus Dados </a>
+            <?php } else { ?>
+                <p class="right" style="margin-top: 0.5em;"><?= anchor('profile/create','Criar Usuário'); ?></p>
+            <?php } ?>
         </div>
     </div>
     

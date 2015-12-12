@@ -22,4 +22,21 @@ class Profile extends CI_Controller
         $this->load->view('profile/index', $data);
         $this->load->view('template/_footer');
     }
+
+    public function create(){
+        $this->load->view('template/_header', array('removeTopo' => true));
+        $this->load->view('profile/create');
+        $this->load->view('template/_footer');
+    }
+
+    public function createNow()
+    {
+        $this->user->setusername($this->input->post('username'));
+        $this->user->setpassword($this->input->post('password'));
+        $this->user->setemail($this->input->post('email'));
+        $this->user->setabout($this->input->post('about'));
+        
+        $this->user->save();
+        redirect('profile/view/' . $this->user->getusername());
+    }
 }

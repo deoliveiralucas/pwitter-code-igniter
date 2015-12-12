@@ -11,8 +11,8 @@ class Main extends CI_Controller
         $data['following'] = $this->follows->findFollowingByUserId($data['user']->id);
         $data['timeline'] = $this->pweet->findContentByUsers($data['following']);
         
-        $this->load->view('template/_header');
+        $this->load->view('template/_header', array('removeTopo' => true));
         $this->load->view('main/index', $data);
-        $this->load->view('template/_footer');
+        //$this->load->view('template/_footer');
     }
 }

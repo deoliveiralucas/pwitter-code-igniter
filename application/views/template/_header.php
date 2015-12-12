@@ -3,8 +3,8 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>
-<!--> 
-<html class="no-js" lang="pt-BR"> 
+<!-->
+<html class="no-js" lang="pt-BR">
 <!--<![endif]-->
 <head>
     <title>Pwitter</title>
@@ -29,7 +29,7 @@
     <div class="topo">
         <div class="container">
             <a href="" class="font-black font-size-2em p-off">Pweeter</a>
-            <?php if (!$removeTopo) { ?>
+            <?php if (! isset($removeTopo)) { ?>
                 <a class="right mar-1em-top"> Sair</a>
                 <a class="right mar-1em-top" style="padding-right: 1em;">Meus Dados </a>
             <?php } else { ?>
@@ -37,4 +37,3 @@
             <?php } ?>
         </div>
     </div>
-    

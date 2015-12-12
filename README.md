@@ -12,7 +12,7 @@ Projeto do módulo de PHP da Pós Graduação UNISAL
 
 `[Clique aqui para acessar o SQL](https://github.com/deoliveiralucas/pwitter-code-igniter/blob/master/database.sql)`
 
-## Demo
+## Screenshot
 
 ![](./pwitter.png)
 

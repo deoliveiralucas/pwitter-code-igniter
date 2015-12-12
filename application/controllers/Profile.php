@@ -4,11 +4,12 @@ class Profile extends CI_Controller
 {
     public function view($username = null)
     {
-        if (! $this->session->userdata('username')) {
+        session_start();
+        if (! isset($_SESSION['username'])) {
             redirect('main/index');
         }
         if (! $username) {
-            $username = $this->session->userdata('username');
+            $username = $_SESSION['username'];
         }
 
         $data['user'] = $this->user->findByUsername($username);
@@ -23,10 +24,11 @@ class Profile extends CI_Controller
 
     public function index()
     {
-        if (! $this->session->userdata('username')) {
+        session_start();
+        if (! isset($_SESSION['username'])) {
             redirect('main/index');
         }
-        $username = $this->session->userdata('username');
+        $username = $_SESSION['username'];
 
         $data['user'] = $this->user->findByUsername($username);
         $data['followers'] = $this->follows->findFollowersByUserId($data['user']->id);
@@ -41,7 +43,8 @@ class Profile extends CI_Controller
 
     public function newpweet()
     {
-        if (! $this->session->userdata('username')) {
+        session_start();
+        if (! isset($_SESSION['username'])) {
             redirect('main/index');
         }
 
@@ -55,8 +58,7 @@ class Profile extends CI_Controller
         redirect('/profile/view/' . $this->input->post('username'));
     }
 
-    public function create()
-    {
+    public function create(){
         $this->load->view('template/_header', array('removeTopo' => true));
         $this->load->view('profile/create');
         $this->load->view('template/_footer');
@@ -71,5 +73,38 @@ class Profile extends CI_Controller
 
         $this->user->save();
         redirect('profile/view/' . $this->user->getusername());
+    }
+
+    public function update(){
+
+        session_start();
+        if(!isset($_SESSION['username']))
+            redirect('main/index');
+
+        $user = $this->user->findByUsername($_SESSION['username']);
+
+        $this->load->view('template/_header');
+        $this->load->view('profile/update', ['user' => $user]);
+        $this->load->view('template/_footer');
+    }
+
+    public function updateNow(){
+
+        session_start();
+        if(!isset($_SESSION['username']))
+            redirect('main/index');
+
+        $this->user->findByUsername($_SESSION['username']);
+
+        $this->user->setId($this->input->post('id'));
+        $this->user->setUsername($this->input->post('username'));
+        $this->user->setPassword($this->input->post('password'));
+        $this->user->setEmail($this->input->post('email'));
+        $this->user->setAbout($this->input->post('about'));
+
+        $this->user->update();
+        $_SESSION['username'] = $this->input->post('username');
+        
+        redirect('profile/view');
     }
 }

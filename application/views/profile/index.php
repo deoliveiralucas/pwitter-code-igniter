@@ -31,7 +31,7 @@
 
         <?php foreach ($timeline as $content): ?>
             <div class="posts">
-                <div class="foto"> </div>
+                <a href="/profile/view/<?php echo $content['user']->username; ?>"><div class="foto"> </div></a>
                 <div class="post">
                     <p>
                         <?php echo $content['content'] ?><br>

@@ -10,7 +10,7 @@ Projeto do módulo de PHP da Pós Graduação UNISAL
 
 **2.** Criar banco de dados
 
-`[Clique aqui para acessar o SQL](https://github.com/deoliveiralucas/pwitter-code-igniter/blob/master/database.sql)`
+[Clique aqui para acessar o SQL](https://github.com/deoliveiralucas/pwitter-code-igniter/blob/master/database.sql)
 
 ## Screenshot
 

@@ -12,7 +12,7 @@
 	<?= form_input('email', '', $email); ?>
 	<br>
 	<?php $desc = 'placeholder="Descrição"'; ?>
-	<?= form_textarea('desc', '', $desc); ?>
+	<?= form_textarea('about', '', $desc); ?>
 	<br>
 	<?= form_submit('send', 'Criar Usuario'); ?>
 

@@ -28,8 +28,8 @@
 
     <div class="topo">
         <div class="container">
-            <a href="" class="font-black font-size-2em p-off">Pweeter</a>
-            
+            <a href="/" class="font-black font-size-2em p-off">Pweeter</a>
+
             <?php if (! isset($removeTopo)) { ?>
                 <a href="../../authentication/logout" class="right mar-1em-top sair"> Sair</a>
                 <a class="right mar-1em-top" style="padding-right: 1em;">Meus Dados </a>

@@ -52,11 +52,14 @@ class Pweet extends CI_Model
         $this->insertDate = $insertDate;
     }
 
-    public function findContentByUsers($users)
+    public function findContentByUsers($users, $userId = null)
     {
         $userIds = [];
         foreach ($users as $user) {
             $userIds[] = $user->target_user;
+        }
+        if ($userId) {
+            $userIds[] = $userId;
         }
 
         $this->db->select('*');

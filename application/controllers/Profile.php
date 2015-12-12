@@ -31,7 +31,7 @@ class Profile extends CI_Controller
         $data['user'] = $this->user->findByUsername($username);
         $data['followers'] = $this->follows->findFollowersByUserId($data['user']->id);
         $data['following'] = $this->follows->findFollowingByUserId($data['user']->id);
-        $data['timeline'] = $this->pweet->findContentByUsers($data['following']);
+        $data['timeline'] = $this->pweet->findContentByUsers($data['following'], $data['user']->id);
         $data['pweets'] = $this->pweet->findPweets($data['user']->id);
 
         $this->load->view('template/_header');

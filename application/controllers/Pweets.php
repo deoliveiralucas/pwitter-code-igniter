@@ -7,7 +7,7 @@ class Pweets extends CI_Controller
         $data = [
             'content' => $this->input->post('content'),
             'user_id' => $this->input->post('user_id'),
-            'insert_date' => time()
+            'insert_date' => date('Y-m-d H:i:s')
         ];
 
         $this->pweet->saveContent($data);

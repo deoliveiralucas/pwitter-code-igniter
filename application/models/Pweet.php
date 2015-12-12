@@ -55,7 +55,7 @@ class Pweet extends CI_Model
     public function findContentByUsers($users)
     {
         $userIds = [];
-        foreach($users as $user) {
+        foreach ($users as $user) {
             $userIds[] = $user->target_user;
         }
 

@@ -1,6 +1,7 @@
 <?php
 
-class User extends CI_Model{
+class User extends CI_Model
+{
 
     private $id;
     private $username;
@@ -8,52 +9,64 @@ class User extends CI_Model{
     private $email;
     private $about;
 
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
     }
 
-    function getId() {
+    function getId()
+    {
         return $this->id;
     }
 
-    function getUsername() {
+    function getUsername()
+    {
         return $this->username;
     }
 
-    function getPassword() {
+    function getPassword()
+    {
         return $this->password;
     }
 
-    function getEmail() {
+    function getEmail()
+    {
         return $this->email;
     }
 
-    function getAbout() {
+    function getAbout()
+    {
         return $this->about;
     }
 
-    function setUsername($username) {
+    function setUsername($username)
+    {
         $this->username = $username;
     }
 
-    function setPassword($password) {
+    function setPassword($password)
+    {
         $this->password = $password;
     }
 
-    function setEmail($email) {
+    function setEmail($email)
+    {
         $this->email = $email;
     }
 
-    function setAbout($about) {
+    function setAbout($about)
+    {
         $this->about = $about;
     }
 
-    public function findByUsername($username) {
-        $query = $this->db->get_where('user',array('username' => $username), 1);
+    public function findByUsername($username)
+    {
+        $query = $this->db->get_where('user', array('username' => $username), 1);
         return $query->row();
     }
 
-    public function save() {
+    public function save()
+    {
         $data = array(
             'username' => $this->getUsername(),
             'password' =>  $this->getPassword(),
@@ -64,14 +77,16 @@ class User extends CI_Model{
         $this->db->insert('user', $data);
     }
 
-    public function canLogin($username,$password) {
+    public function canLogin($username, $password)
+    {
         $this->db->where('username', $username);
         $this->db->where('password', $password);
 
         $result = $this->db->count_all_results('user');
 
-        if ($result > 0) return true;
+        if ($result > 0) {
+            return true;
+        }
         return false;
     }
-   
 }

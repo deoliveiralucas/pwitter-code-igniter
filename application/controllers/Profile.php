@@ -4,12 +4,11 @@ class Profile extends CI_Controller
 {
     public function view($username = null)
     {
-        session_start();
-        if (! isset($_SESSION['username'])) {
+        if (! $this->session->userdata('username')) {
             redirect('main/index');
         }
         if (! $username) {
-            $username = $_SESSION['username'];
+            $username = $this->session->userdata('username');
         }
 
         $data['user'] = $this->user->findByUsername($username);
@@ -24,11 +23,10 @@ class Profile extends CI_Controller
 
     public function index()
     {
-        session_start();
-        if (! isset($_SESSION['username'])) {
+        if (! $this->session->userdata('username')) {
             redirect('main/index');
         }
-        $username = $_SESSION['username'];
+        $username = $this->session->userdata('username');
 
         $data['user'] = $this->user->findByUsername($username);
         $data['followers'] = $this->follows->findFollowersByUserId($data['user']->id);
@@ -43,8 +41,7 @@ class Profile extends CI_Controller
 
     public function newpweet()
     {
-        session_start();
-        if (! isset($_SESSION['username'])) {
+        if (! $this->session->userdata('username')) {
             redirect('main/index');
         }
 
@@ -58,7 +55,8 @@ class Profile extends CI_Controller
         redirect('/profile/view/' . $this->input->post('username'));
     }
 
-    public function create(){
+    public function create()
+    {
         $this->load->view('template/_header', array('removeTopo' => true));
         $this->load->view('profile/create');
         $this->load->view('template/_footer');

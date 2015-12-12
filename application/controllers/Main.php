@@ -4,8 +4,7 @@ class Main extends CI_Controller
 {
     public function index()
     {
-        session_start();
-        if (isset($_SESSION['username'])) {
+        if ($this->session->userdata('username')) {
             redirect('profile/index');
         }
 
